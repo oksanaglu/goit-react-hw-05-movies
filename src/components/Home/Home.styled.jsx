@@ -19,7 +19,7 @@ export const ListHome = styled.ul`
 export const ItemHome = styled.li`
   margin: 0;
   padding: 3px; 
- 
+
   > a {
     text-decoration: none;
   }

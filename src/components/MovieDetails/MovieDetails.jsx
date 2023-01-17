@@ -1,8 +1,10 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, NavLink, useLocation } from 'react-router-dom';
 import * as API from '../ApiThemoviedb/ApiThemoviedb';
-import { MovieContainer, DetailsContainer, OverviewContainer, ButtonContainer } from './MovieDetails.styled';
- /* eslint-disable react-hooks/exhaustive-deps */
+import { RxChevronLeft } from 'react-icons/rx';
+import { MovieContainer, DetailsContainer, OverviewContainer, ButtonContainer, NavLinkBtn } from './MovieDetails.styled';
+/* eslint-disable react-hooks/exhaustive-deps */
+ 
 
 export const MovieDetails = () => {
   const params = useParams();
@@ -24,7 +26,9 @@ export const MovieDetails = () => {
   if (movies.success === false)
     return (
       <MovieContainer>
-        <NavLink to="/">Go back</NavLink>
+        <NavLinkBtn type="submit" className="button">
+          <NavLink to="/"><RxChevronLeft style={{ width: 12, height: 12 }} /> Go back</NavLink>
+        </NavLinkBtn>
         <DetailsContainer>
           <div>We don`t have any details for this movie</div>
         </DetailsContainer>
@@ -38,7 +42,9 @@ export const MovieDetails = () => {
 
   return (
     <MovieContainer>
-      <NavLink to={backLinkHref}>Go back</NavLink>
+      <NavLinkBtn type="submit" className="button">
+        <NavLink to={backLinkHref}><RxChevronLeft style={{ width: 12, height: 12 }} /> Go back</NavLink>
+      </NavLinkBtn>
       <DetailsContainer>
         <img
           src={`${API.BASE_URL_IMAGE}${poster_path}`}

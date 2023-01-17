@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-
 import { HeaderNav, HeaderNavList, HeaderNavItem } from './Header.styled';
 
 const navItem = [
@@ -22,4 +21,5 @@ const Header = () => {
     </HeaderNav>
   );
 };
+
 export default Header;
